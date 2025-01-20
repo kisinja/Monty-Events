@@ -1,0 +1,1 @@
+import Ticket from "../models/Ticket.js";
