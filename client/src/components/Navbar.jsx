@@ -12,7 +12,7 @@ const Navbar = () => {
     const toggleMenu = () => setMenuOpen(!menuOpen);
 
     return (
-        <nav className="flex justify-between items-center py-3 md:px-12 sticky top-0 bg-white w-full px-4">
+        <nav className="flex justify-between items-center py-3 md:px-12 sticky top-0 bg-white w-full px-4 z-[1000]">
             <div className="flex items-center gap-12">
                 <div
                     className="cursor-pointer"

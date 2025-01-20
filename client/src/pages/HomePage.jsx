@@ -1,8 +1,9 @@
+import HomeSearch from "../components/HomeSearch"
 
 const HomePage = () => {
     return (
         <div>
-            HomePage
+            <HomeSearch />
         </div>
     )
 }

@@ -19,7 +19,7 @@ const Dropdown = ({ isOpen, setIsOpen, user, setUser }) => {
             />
 
             {isOpen && (
-                <div className="absolute right-0 w-40 mt-2 bg-[#9333ea]/70 shadow-lg rounded-md border">
+                <div className="absolute right-0 w-40 mt-2 bg-[#9333ea] shadow-lg rounded-md">
                     <ul>
                         <li className="px-4 py-2 text-gray-800 hover:bg-[#9333ea]/30 cursor-pointer flex justify-between items-center">
                             👋
