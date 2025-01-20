@@ -22,6 +22,9 @@ const Navbar = () => {
                     }}
                 >
                     <span className="text-xl font-bold">MontyEvents</span>
+
+                    {/* <img
+                        src="https://ik.imagekit.io/kisinjakit/file%20(3).png?updatedAt=1737386668626" alt="Logo" width={200} height={100} className=' object-cover' /> */}
                 </div>
 
                 {/* Desktop Menu */}
