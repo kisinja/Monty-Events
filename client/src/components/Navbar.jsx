@@ -12,7 +12,7 @@ const Navbar = () => {
     const toggleMenu = () => setMenuOpen(!menuOpen);
 
     return (
-        <nav className="flex justify-between items-center py-3 md:px-12 sticky top-0 bg-white w-full px-4 z-[1000]">
+        <nav className="flex justify-between items-center py-3 md:px-12 sticky top-0 bg-gradient-to-b from-black/70 to-[#11393951] w-full px-4 z-[1000]">
             <div className="flex items-center gap-12">
                 <div
                     className="cursor-pointer"
@@ -21,7 +21,7 @@ const Navbar = () => {
                         scrollTo(0, 0);
                     }}
                 >
-                    <span className="text-xl font-bold">MontyEvents</span>
+                    <span className="text-xl font-bold text-gray-200">MontyEvents</span>
 
                     {/* <img
                         src="https://ik.imagekit.io/kisinjakit/file%20(3).png?updatedAt=1737386668626" alt="Logo" width={200} height={100} className=' object-cover' /> */}
@@ -33,7 +33,7 @@ const Navbar = () => {
                         <NavLink
                             to="/concerts"
                             className={({ isActive }) =>
-                                `${isActive ? 'underline text-black' : 'text-gray-600'} hover:text-black`
+                                `${isActive ? 'underline text-[#247676]' : 'text-gray-400'} hover:text-[#247676]`
                             }
                         >
                             Concerts
@@ -41,19 +41,19 @@ const Navbar = () => {
                     </li>
                     <li>
                         <NavLink
-                            to="/sports"
+                            to="/vendors"
                             className={({ isActive }) =>
-                                `${isActive ? 'underline text-black' : 'text-gray-600'} hover:text-black`
+                                `${isActive ? 'underline text-[#247676]' : 'text-gray-400'} hover:text-[#247676]`
                             }
                         >
-                            Sports
+                            Vendors
                         </NavLink>
                     </li>
                     <li>
                         <NavLink
                             to="/theatre"
                             className={({ isActive }) =>
-                                `${isActive ? 'underline text-black' : 'text-gray-600'} hover:text-black`
+                                `${isActive ? 'underline text-[#247676]' : 'text-gray-400'} hover:text-[#247676]`
                             }
                         >
                             Theatre
@@ -63,7 +63,7 @@ const Navbar = () => {
                         <NavLink
                             to="/festivals"
                             className={({ isActive }) =>
-                                `${isActive ? 'underline text-black' : 'text-gray-600'} hover:text-black`
+                                `${isActive ? 'underline text-[#247676]' : 'text-gray-400'} hover:text-[#247676]`
                             }
                         >
                             Festivals
@@ -82,7 +82,7 @@ const Navbar = () => {
                         <NavLink
                             to="/concerts"
                             className={({ isActive }) =>
-                                `${isActive ? 'underline text-black' : 'text-gray-600'} hover:text-black`
+                                `${isActive ? 'underline text-[#247676]' : 'text-gray-400'} hover:text-[#247676]`
                             }
                         >
                             Concerts
@@ -92,7 +92,7 @@ const Navbar = () => {
                         <NavLink
                             to="/sports"
                             className={({ isActive }) =>
-                                `${isActive ? 'underline text-black' : 'text-gray-600'} hover:text-black`
+                                `${isActive ? 'underline text-[#247676]' : 'text-gray-400'} hover:text-[#247676]`
                             }
                         >
                             Sports
@@ -102,7 +102,7 @@ const Navbar = () => {
                         <NavLink
                             to="/theatre"
                             className={({ isActive }) =>
-                                `${isActive ? 'underline text-black' : 'text-gray-600'} hover:text-black`
+                                `${isActive ? 'underline text-[#247676]' : 'text-gray-400'} hover:text-[#247676]`
                             }
                         >
                             Theatre
@@ -112,7 +112,7 @@ const Navbar = () => {
                         <NavLink
                             to="/festivals"
                             className={({ isActive }) =>
-                                `${isActive ? 'underline text-black' : 'text-gray-600'} hover:text-black`
+                                `${isActive ? 'underline text-[#247676]' : 'text-gray-400'} hover:text-[#247676]`
                             }
                         >
                             Festivals
@@ -148,7 +148,7 @@ const Navbar = () => {
                             scrollTo(0, 0);
                             setUser(!user);
                         }}
-                        className="cursor-pointer bg-[#9333ea] text-white font-semibold rounded py-2 px-4 focus:scale-90 transition-transform duration-150"
+                        className="cursor-pointer bg-[#113939] text-white font-semibold rounded py-2 px-4 focus:scale-90 transition-transform duration-150"
                     >
                         Sign In
                     </button>

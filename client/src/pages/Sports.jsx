@@ -1,7 +1,7 @@
 
 const Sports = () => {
     return (
-        <div>Sports</div>
+        <div>Vendors</div>
     )
 }
 

@@ -35,7 +35,12 @@ const eventSchema = new mongoose.Schema({
     ticket: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Ticket",
-    }
+    },
+    gallery: [
+        {
+            type: String,
+        }
+    ]
 }, { timestamps: true });
 
 const Event = mongoose.model("Event", eventSchema);

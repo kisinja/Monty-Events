@@ -5,3 +5,10 @@
 body {
     font-family: "Montserrat", sans-serif;
 }
+
+#search {
+    background: url(https://i.pinimg.com/736x/23/29/3f/23293f0cecddc872ed1e7f54c5baa41c.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

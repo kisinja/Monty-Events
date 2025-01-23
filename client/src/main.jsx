@@ -10,6 +10,8 @@ import Concerts from './pages/Concerts.jsx';
 import Sports from './pages/Sports.jsx';
 import Festivals from './pages/Festivals.jsx';
 import Theatre from './pages/Theatre.jsx';
+import Vendors from './components/Vendors.jsx';
+import EventDetails from './pages/EventDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -56,6 +58,22 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <Festivals />
+          </ProtectedRoute>
+        )
+      },
+      {
+        path: '/vendors',
+        element: (
+          <ProtectedRoute>
+            <Vendors />
+          </ProtectedRoute>
+        )
+      },
+      {
+        path: '/:title',
+        element: (
+          <ProtectedRoute>
+            <EventDetails />
           </ProtectedRoute>
         )
       },

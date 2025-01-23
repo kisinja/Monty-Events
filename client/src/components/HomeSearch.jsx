@@ -1,6 +1,6 @@
 const HomeSearch = () => {
     return (
-        <section className="bg-gradient-to-b from-blue-500 to-purple-600 px-12 flex justify-center items-center w-full h-[500px]">
+        <section className="bg-gradient-to-b from-white to-[#1139393f] px-12 flex justify-center items-center w-full h-[500px] " id="search">
             <div className="flex flex-col gap-4 items-center w-full">
                 <h1 className="text-4xl font-bold text-white">Find Your Next Experience</h1>
                 <p className="text-white tracking-wide text-sm font-semibold">Discover and book tickets for the best events near you</p>
