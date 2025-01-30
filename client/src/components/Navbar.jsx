@@ -9,10 +9,18 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
 
+    const menuItems = [
+        { name: "Club Hosting", path: "club-hosting" },
+        { name: "Co-operate Events", path: "cooperate-events" },
+        { name: "Apartment Life", path: "apartment-life" },
+        { name: "Outdoor Events", path: "outdoor-events" },
+    ];
+
     const toggleMenu = () => setMenuOpen(!menuOpen);
 
     return (
         <nav className="flex justify-between items-center py-3 md:px-12 sticky top-0 bg-gradient-to-b from-black/70 to-[#11393951] w-full px-4 z-[1000]">
+            {/* Logo */}
             <div className="flex items-center gap-12">
                 <div
                     className="cursor-pointer"
@@ -22,124 +30,63 @@ const Navbar = () => {
                     }}
                 >
                     <span className="text-xl font-bold text-gray-200">MontyEvents</span>
-
-                    {/* <img
-                        src="https://ik.imagekit.io/kisinjakit/file%20(3).png?updatedAt=1737386668626" alt="Logo" width={200} height={100} className=' object-cover' /> */}
                 </div>
 
                 {/* Desktop Menu */}
                 <ul className="hidden md:flex gap-6">
-                    <li>
-                        <NavLink
-                            to="/concerts"
-                            className={({ isActive }) =>
-                                `${isActive ? 'underline text-[#247676]' : 'text-gray-400'} hover:text-[#247676]`
-                            }
-                        >
-                            Concerts
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            to="/vendors"
-                            className={({ isActive }) =>
-                                `${isActive ? 'underline text-[#247676]' : 'text-gray-400'} hover:text-[#247676]`
-                            }
-                        >
-                            Vendors
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            to="/theatre"
-                            className={({ isActive }) =>
-                                `${isActive ? 'underline text-[#247676]' : 'text-gray-400'} hover:text-[#247676]`
-                            }
-                        >
-                            Theatre
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            to="/festivals"
-                            className={({ isActive }) =>
-                                `${isActive ? 'underline text-[#247676]' : 'text-gray-400'} hover:text-[#247676]`
-                            }
-                        >
-                            Festivals
-                        </NavLink>
-                    </li>
+                    {menuItems.map((item, index) => (
+                        <li key={index}>
+                            <NavLink
+                                to={`/categories/${item.path}`}
+                                className={({ isActive }) =>
+                                    `${isActive ? 'underline text-[#247676]' : 'text-gray-400'} hover:text-[#247676]`
+                                }
+                            >
+                                {item.name}
+                            </NavLink>
+                        </li>
+                    ))}
                 </ul>
             </div>
 
             {/* Mobile Menu */}
-            <div
-                className={`absolute top-0 left-0 w-full bg-white shadow-lg p-6 md:hidden ${menuOpen ? 'block' : 'hidden'
-                    } z-[50]`}
-            >
-                <ul className="flex flex-col gap-4">
-                    <li>
-                        <NavLink
-                            to="/concerts"
-                            className={({ isActive }) =>
-                                `${isActive ? 'underline text-[#247676]' : 'text-gray-400'} hover:text-[#247676]`
-                            }
-                        >
-                            Concerts
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            to="/sports"
-                            className={({ isActive }) =>
-                                `${isActive ? 'underline text-[#247676]' : 'text-gray-400'} hover:text-[#247676]`
-                            }
-                        >
-                            Sports
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            to="/theatre"
-                            className={({ isActive }) =>
-                                `${isActive ? 'underline text-[#247676]' : 'text-gray-400'} hover:text-[#247676]`
-                            }
-                        >
-                            Theatre
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            to="/festivals"
-                            className={({ isActive }) =>
-                                `${isActive ? 'underline text-[#247676]' : 'text-gray-400'} hover:text-[#247676]`
-                            }
-                        >
-                            Festivals
-                        </NavLink>
-                    </li>
-                </ul>
-            </div>
+            {menuOpen && (
+                <div className="absolute top-0 left-0 w-full bg-white shadow-lg p-6 md:hidden z-[50]">
+                    <ul className="flex flex-col gap-4">
+                        {menuItems.map((item, index) => (
+                            <li key={index}>
+                                <NavLink
+                                    to={`/categories/${item.path}`}
+                                    className={({ isActive }) =>
+                                        `${isActive ? 'underline text-[#247676]' : 'text-gray-400'} hover:text-[#247676]`
+                                    }
+                                    onClick={() => setMenuOpen(false)}
+                                >
+                                    {item.name}
+                                </NavLink>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
 
-            {/* User or Sign In Button */}
-            <div className='flex gap-4'>
+            {/* User Profile or Sign In */}
+            <div className='flex gap-4 items-center'>
                 {user ? (
-                    <div>
-                        <div className="flex gap-1 items-center">
-                            <img
-                                src="https://i.pinimg.com/736x/6e/59/95/6e599501252c23bcf02658617b29c894.jpg"
-                                alt="User Image"
-                                className="w-10 h-10 rounded-full border-4 border-[#9333ea] cursor-pointer"
-                                title='Signed In as User'
-                                onClick={() => setIsOpen(prev => !prev)}
-                            />
-                            <Dropdown
-                                isOpen={isOpen}
-                                setIsOpen={setIsOpen}
-                                user={user}
-                                setUser={setUser}
-                            />
-                        </div>
+                    <div className="flex gap-1 items-center">
+                        <img
+                            src="https://i.pinimg.com/736x/6e/59/95/6e599501252c23bcf02658617b29c894.jpg"
+                            alt="User"
+                            className="w-10 h-10 rounded-full border-4 border-[#9333ea] cursor-pointer"
+                            title='Signed In as User'
+                            onClick={() => setIsOpen(prev => !prev)}
+                        />
+                        <Dropdown
+                            isOpen={isOpen}
+                            setIsOpen={setIsOpen}
+                            user={user}
+                            setUser={setUser}
+                        />
                     </div>
                 ) : (
                     <button
@@ -154,11 +101,10 @@ const Navbar = () => {
                     </button>
                 )}
 
-                {/* Hamburger Icon (Mobile) */}
+                {/* Mobile Menu Toggle */}
                 <button onClick={toggleMenu} className="md:hidden z-50">
-                    {menuOpen ? <FaTimes className="text-xl" /> : <FaBars className="text-xl" />}
+                    {menuOpen ? <FaTimes className="text-xl text-white" /> : <FaBars className="text-xl text-white" />}
                 </button>
-
             </div>
         </nav>
     );

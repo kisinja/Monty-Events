@@ -12,6 +12,7 @@ import Festivals from './pages/Festivals.jsx';
 import Theatre from './pages/Theatre.jsx';
 import Vendors from './components/Vendors.jsx';
 import EventDetails from './pages/EventDetails.jsx';
+import Category from './pages/Category.jsx';
 
 const router = createBrowserRouter([
   {
@@ -70,10 +71,18 @@ const router = createBrowserRouter([
         )
       },
       {
-        path: '/:title',
+        path: '/events/:title',
         element: (
           <ProtectedRoute>
             <EventDetails />
+          </ProtectedRoute>
+        )
+      },
+      {
+        path: '/categories/:name',
+        element: (
+          <ProtectedRoute>
+            <Category />
           </ProtectedRoute>
         )
       },

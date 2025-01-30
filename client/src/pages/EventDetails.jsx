@@ -1,9 +1,10 @@
 import { useLocation } from "react-router-dom";
 import { events } from "../../data";
+import formatEventDate from "../../formatDate";
 
 const EventDetails = () => {
     const location = useLocation();
-    const title = location.pathname.split("/")[1].replace("%20", " ");
+    const title = location.pathname.split("/")[2].replace("%20", " ");
     const event = events.find((event) => event.title === title);
 
     return (
@@ -27,7 +28,7 @@ const EventDetails = () => {
                         <h2 className="text-2xl font-bold mb-4">Event Details</h2>
                         <ul className="space-y-2 ">
                             <li>
-                                <span className="font-bold">Date:</span> {event.date}
+                                <span className="font-bold">Date:</span> {formatEventDate(event.date)}
                             </li>
                             <li>
                                 <span className="font-bold">Location:</span> {event.location}
@@ -36,7 +37,9 @@ const EventDetails = () => {
                                 <span className="font-bold">Available Tickets:</span> {event.availableTickets}
                             </li>
                             <li>
-                                <span className="font-bold">Ticket Price:</span> KES {event.ticketPrice}
+                                <span className="font-bold">Ticket Price:</span> {
+                                    event.ticketPrice ? `KES ${event.ticketPrice}` : "FREE ENTRY"
+                                }
                             </li>
                             <li>
                                 <span className="font-bold">Policy:</span> {event.policy}
