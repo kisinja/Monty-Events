@@ -10,10 +10,10 @@ const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const menuItems = [
-        { name: "Club Hosting", path: "club-hosting" },
-        { name: "Co-operate Events", path: "cooperate-events" },
-        { name: "Apartment Life", path: "apartment-life" },
-        { name: "Outdoor Events", path: "outdoor-events" },
+        { name: "Club Hosting", path: "Club Hosting" },
+        { name: "Co-operate Events", path: "Co-operate Events" },
+        { name: "Apartment Life", path: "Apartment Life" },
+        { name: "Outdoor Events", path: "Outdoor Events" },
     ];
 
     const toggleMenu = () => setMenuOpen(!menuOpen);

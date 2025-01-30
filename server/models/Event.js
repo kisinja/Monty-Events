@@ -40,7 +40,10 @@ const eventSchema = new mongoose.Schema({
         {
             type: String,
         }
-    ]
+    ],
+    color: {
+        type: String,
+    }
 }, { timestamps: true });
 
 const Event = mongoose.model("Event", eventSchema);
